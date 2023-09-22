@@ -1,0 +1,166 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"image"
+	"image/draw"
+	"image/jpeg"
+	"image/png"
+	"os"
+	"strconv"
+	"strings"
+
+	"github.com/nfnt/resize"
+)
+
+const (
+	DefaultDeckName             = "grixis_delver"
+	MaindeckSize60              = 60
+	MaindeckSize80              = 80
+	NumOfSideboardCards         = 15
+	Col60                       = 12
+	Col80                       = 16
+	ImgWidth                    = 200
+	ImgHeight                   = 280
+	SideboardGap                = 20
+	NumOfSizeboardFirstRowCards = 7
+)
+
+type Deck struct {
+	Maindeck   []string
+	Sideboard  []string
+	CardImgMap map[string]image.Image
+}
+
+func readDecklist(deckName string) (*Deck, error) {
+	file, err := os.Open(fmt.Sprintf("decklist/%s.txt", deckName))
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	deck := &Deck{
+		CardImgMap: map[string]image.Image{},
+	}
+	scanner := bufio.NewScanner(file)
+	decklist := []string{}
+	for scanner.Scan() {
+		line := scanner.Text()
+		if strings.HasPrefix(line, "//") {
+			continue
+		}
+		numOfCopiesStr := line[:1]
+		numOfCopies, err := strconv.Atoi(numOfCopiesStr)
+		if err != nil {
+			return nil, err
+		}
+		cardName := line[2:]
+		for i := 0; i < numOfCopies; i++ {
+			decklist = append(decklist, cardName)
+		}
+		_, ok := deck.CardImgMap[cardName]
+		if !ok {
+			imgFile, err := os.Open(fmt.Sprintf("img/%s.png", cardName))
+			if err != nil {
+				fmt.Println(err)
+				continue
+			}
+			img, err := png.Decode(imgFile)
+			if err != nil {
+				fmt.Println(err)
+				continue
+			}
+			resizedImg := resize.Resize(ImgWidth, ImgHeight, img, resize.Lanczos3)
+			deck.CardImgMap[cardName] = resizedImg
+		}
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	totalCards := len(decklist)
+	deck.Maindeck = decklist[:totalCards-NumOfSideboardCards]
+	deck.Sideboard = decklist[totalCards-NumOfSideboardCards:]
+	return deck, nil
+}
+
+func main() {
+	args := os.Args
+	deckName := DefaultDeckName
+	if len(args) > 1 {
+		deckName = args[1]
+	}
+	deck, err := readDecklist(deckName)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	maindeckSize := len(deck.Maindeck)
+	col := Col60
+	if maindeckSize == MaindeckSize80 {
+		col = Col80
+	}
+	sideboardHeight := ImgHeight * 2
+	bottomRightPoint := image.Point{ImgWidth * col, ImgHeight*maindeckSize/col + sideboardHeight + SideboardGap}
+	// whole image container
+	r := image.Rectangle{image.Point{0, 0}, bottomRightPoint}
+	rgba := image.NewRGBA(r)
+	// render background
+	bgImgFile, err := os.Open("img/background.jpg")
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		bgImg, err := jpeg.Decode(bgImgFile)
+		if err != nil {
+			fmt.Println(err)
+		} else {
+			resizedBgImg := resize.Resize(uint(r.Bounds().Dx()), 0, bgImg, resize.Lanczos3)
+			startingPoint := image.Point{0, r.Dy() - resizedBgImg.Bounds().Dy()}
+			bound := image.Rectangle{startingPoint, startingPoint.Add(resizedBgImg.Bounds().Size())}
+			draw.Draw(rgba, bound, resizedBgImg, image.Point{0, 0}, draw.Src)
+		}
+	}
+	// render main deck
+	for i, cardName := range deck.Maindeck {
+		row := i % col
+		col := i / col
+		startingPoint := image.Point{row * ImgWidth, col * ImgHeight}
+		bound := image.Rectangle{startingPoint, startingPoint.Add(image.Point{ImgWidth, ImgHeight})}
+		cardImg, ok := deck.CardImgMap[cardName]
+		if ok {
+			draw.Draw(rgba, bound, cardImg, image.Point{0, 0}, draw.Src)
+		}
+	}
+	// render sideboard
+	maindeckRows := maindeckSize / col
+	sideboardGapLeft := (r.Dx() - ImgWidth*NumOfSizeboardFirstRowCards) / 2
+	for i, cardName := range deck.Sideboard[:NumOfSizeboardFirstRowCards] {
+		startingPoint := image.Point{sideboardGapLeft + ImgWidth*i, maindeckRows*ImgHeight + SideboardGap}
+		bound := image.Rectangle{startingPoint, startingPoint.Add(image.Point{ImgWidth, ImgHeight})}
+		cardImg, ok := deck.CardImgMap[cardName]
+		if ok {
+			draw.Draw(rgba, bound, cardImg, image.Point{0, 0}, draw.Src)
+		}
+	}
+	sideboardGapLeft = (r.Dx() - ImgWidth*8) / 2
+	for i, cardName := range deck.Sideboard[NumOfSizeboardFirstRowCards:] {
+		startingPoint := image.Point{sideboardGapLeft + ImgWidth*i, maindeckRows*ImgHeight + SideboardGap + ImgHeight}
+		bound := image.Rectangle{startingPoint, startingPoint.Add(image.Point{ImgWidth, ImgHeight})}
+		cardImg, ok := deck.CardImgMap[cardName]
+		if ok {
+			draw.Draw(rgba, bound, cardImg, image.Point{0, 0}, draw.Src)
+		}
+	}
+	// create final image
+	out, err := os.Create(fmt.Sprintf("./decklist/%s.jpg", deckName))
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	var opt jpeg.Options
+	opt.Quality = 60
+
+	jpeg.Encode(out, rgba, &opt)
+}

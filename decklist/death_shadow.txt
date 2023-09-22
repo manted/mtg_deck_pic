@@ -1,0 +1,30 @@
+4 Polluted Delta
+4 Watery Grave
+4 Wasteland
+1 Underground Sea
+1 Island
+1 Swamp
+1 Scalding Tarn
+4 Death's Shadow
+4 Orcish Bowmasters
+4 Grief
+4 Troll of Khazad-dum
+2 Brazen Borrower
+2 Murktide Regent
+4 Brainstorm
+4 Ponder
+4 Thoughtseize
+4 Daze
+4 Force of Will
+4 Reanimate
+// sidebaord
+2 Hydroblast
+2 Surgical Extraction
+2 Fatal Push
+2 Dress Down
+2 Massacre
+1 Engineered Explosives
+1 Null Rod
+1 Sheoldred's Edict
+1 Dauthi Voidwalker
+1 Force of Negation

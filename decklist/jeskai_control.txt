@@ -1,0 +1,35 @@
+4 Ponder
+4 Brainstorm
+1 Snapcaster Mage
+2 Supreme Verdict
+1 Tundra
+1 Volcanic Island
+4 Flooded Strand
+2 Scalding Tarn
+4 Force of Will
+1 Jace, the Mind Sculptor
+1 Karakas
+2 Teferi, Time Raveler
+2 Force of Negation
+4 Narset, Parter of Veils
+4 Prismatic Vista
+4 Prismatic Ending
+2 Dress Down
+4 Swords to Plowshares
+1 The Wandering Emperor
+2 Plains
+4 Island
+1 Mountain
+2 Samwise the Stouthearted
+3 Forth Eorlingas!
+// sidebaord
+1 Meltdown
+2 Pyroblast
+2 Surgical Extraction
+1 Ruination
+2 Izzet Staticaster
+2 Containment Priest
+1 Stony Silence
+1 Red Elemental Blast
+2 Deafening Silence
+1 Cast into the Fire
