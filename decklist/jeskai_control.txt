@@ -1,27 +1,26 @@
+2 Snapcaster Mage
 4 Ponder
 4 Brainstorm
-1 Snapcaster Mage
-2 Supreme Verdict
-1 Tundra
-1 Volcanic Island
-4 Flooded Strand
-2 Scalding Tarn
 4 Force of Will
-1 Jace, the Mind Sculptor
-1 Karakas
-2 Teferi, Time Raveler
 2 Force of Negation
+2 Jace, the Mind Sculptor
+2 Teferi, Time Raveler
 4 Narset, Parter of Veils
-4 Prismatic Vista
-4 Prismatic Ending
+1 Back to Basics
 2 Dress Down
 4 Swords to Plowshares
-1 The Wandering Emperor
-2 Plains
-4 Island
-1 Mountain
-2 Samwise the Stouthearted
+4 Prismatic Ending
+2 Supreme Verdict
 3 Forth Eorlingas!
+4 Island
+2 Plains
+1 Mountain
+1 Tundra
+1 Volcanic Island
+1 Karakas
+4 Flooded Strand
+2 Scalding Tarn
+4 Prismatic Vista
 // sidebaord
 1 Meltdown
 2 Pyroblast
