@@ -1,11 +1,11 @@
 2 Snapcaster Mage
 4 Ponder
 4 Brainstorm
-4 Force of Will
 2 Force of Negation
-2 Jace, the Mind Sculptor
+4 Force of Will
 2 Teferi, Time Raveler
 4 Narset, Parter of Veils
+2 Jace, the Mind Sculptor
 1 Back to Basics
 2 Dress Down
 4 Swords to Plowshares
@@ -22,13 +22,12 @@
 2 Scalding Tarn
 4 Prismatic Vista
 // sidebaord
-1 Meltdown
 2 Pyroblast
+1 Hydroblast
 2 Surgical Extraction
-1 Ruination
-2 Izzet Staticaster
+2 Flusterstorm
+1 Izzet Staticaster
 2 Containment Priest
-1 Stony Silence
-1 Red Elemental Blast
-2 Deafening Silence
-1 Cast into the Fire
+2 Lavinia, Azorius Renegade
+1 Blood Moon
+2 Meltdown
