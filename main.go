@@ -50,12 +50,13 @@ func readDecklist(deckName string) (*Deck, error) {
 		if strings.HasPrefix(line, "//") {
 			continue
 		}
-		numOfCopiesStr := line[:1]
+		lineParts := strings.Split(line, " ")
+		numOfCopiesStr := lineParts[0]
 		numOfCopies, err := strconv.Atoi(numOfCopiesStr)
 		if err != nil {
 			return nil, err
 		}
-		cardName := line[2:]
+		cardName := line[len(numOfCopiesStr)+1:]
 		for i := 0; i < numOfCopies; i++ {
 			decklist = append(decklist, cardName)
 		}
