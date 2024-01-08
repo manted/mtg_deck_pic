@@ -93,6 +93,7 @@ func main() {
 	if len(args) > 1 {
 		deckName = args[1]
 	}
+	fmt.Printf("Generating deck pic for %s\n", deckName)
 	deck, err := readDecklist(deckName)
 	if err != nil {
 		fmt.Println(err)
@@ -155,7 +156,8 @@ func main() {
 		}
 	}
 	// create final image
-	out, err := os.Create(fmt.Sprintf("./decklist/%s.jpg", deckName))
+	outputFileName := fmt.Sprintf("./decklist/%s.jpg", deckName)
+	out, err := os.Create(fmt.Sprintf(outputFileName))
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -164,4 +166,5 @@ func main() {
 	opt.Quality = 60
 
 	jpeg.Encode(out, rgba, &opt)
+	fmt.Printf("Successfully generated %s\n", outputFileName)
 }
