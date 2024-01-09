@@ -41,6 +41,11 @@ Open the Terminal app.
 
 In the terminal, go to the unzipped folder by running:
 ```sh
+cd /path/to/your/folder
+```
+
+For example:
+```sh
 cd /Users/manted/mtg_deck_pic
 ```
 
