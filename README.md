@@ -13,19 +13,23 @@ To run the program, please refer to the OS system specific to your machine:
 - [Mac](#on-mac)
 
 #### On Windows
-On Windows, search for terminal in Search and select Windows Terminal from the search results.
+There are 2 ways you can run this program.
 
-In the terminal, go to the unzipped folder by running:
+First way, double click the exe file directly and it will generate the deck picture for `grixis_delver` in your `/decklist` folder. Keep in mind that it would overwrite the existing `grixis_delver.jpg` file in the `/decklist` folder.
+
+Second way, if you want to generate deck pictures for other decklists, search for `Command Prompt` in Search and open it.
+
+In the `Command Prompt`, go to the unzipped folder by running:
 ```sh
 cd /path/to/your/folder
 ```
 
 For example:
 ```sh
-cd C:\Users\manted\mtg_deck_pic
+cd C:\Users\manted\mtg_deck_pic-main
 ```
 
-To run the program in the terminal:
+To run the program:
 
 ```sh
 start deck_pic_generator DECKNAME
@@ -46,7 +50,7 @@ cd /path/to/your/folder
 
 For example:
 ```sh
-cd /Users/manted/mtg_deck_pic
+cd /Users/manted/mtg_deck_pic-main
 ```
 
 To run the program in the terminal:
@@ -74,3 +78,4 @@ The background of the generated image is `/img/background.jpg`. You can replace 
 - Main deck size has to be exactly 60 or 80. Sideboard size has to be exactly 15.
 - Split card names with `/` in them are not working at the moment. eg: Fire // Ice. You can use a different name without the `/` in the decklists and image names in `/img` folder. eg: Fire Ice.
 - Cards that are in the decklists but are not in the `/img` folder will be left blank in the generated deck picture.
+- Same card image is used for each card name in the decklist, if you want to have different versions of a card, you can give them different names. For example, you have Island_1.png and Island_2.png, and use them as different cards in your decklist.
