@@ -1,0 +1,60 @@
+1 Abhorrent Oculus
+1 Arena of Glory
+1 Arid Mesa
+1 Badlands
+1 Baleful Strix
+1 Barrowgoyf
+1 Bloodstained Mire
+1 Brainstorm
+1 Brazen Borrower // Petty Theft
+1 Consider
+1 Cori-Steel Cutter
+1 Dark Confidant
+1 Dauthi Voidwalker
+1 Dragon's Rage Channeler
+1 Dreadhorde Arcanist
+1 Drown in the Loch
+1 Expressive Iteration
+1 Fatal Push
+1 Flame of Anor
+1 Flooded Strand
+1 Force of Negation
+1 Force of Will
+1 Gitaxian Probe
+1 Island
+1 Ledger Shredder
+1 Lightning Bolt
+1 Marsh Flats
+1 Mental Misstep
+1 Mental Note
+1 Mishra's Bauble
+1 Mistrise Village
+1 Misty Rainforest
+1 Molten Collapse
+1 Orcish Bowmasters
+1 Overlord of the Balemurk
+1 Polluted Delta
+1 Ponder
+1 Preordain
+1 Ragavan, Nimble Pilferer
+1 Reanimate
+1 Scalding Tarn
+1 Sheoldred, the Apocalypse
+1 Snapcaster Mage
+1 Snuff Out
+1 Spell Pierce
+1 Steam Vents
+1 Stock Up
+1 Swamp
+1 Tamiyo, Inquisitive Student
+1 Terminate
+1 Thought Scour
+1 Thoughtseize
+1 Underground Sea
+1 Unearth
+1 Unholy Heat
+1 Urza's Bauble
+1 Verdant Catacombs
+1 Volcanic Island
+1 Watery Grave
+1 Wooded Foothills

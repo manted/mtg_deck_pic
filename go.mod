@@ -2,4 +2,7 @@ module github.com/manted/mtg_deck_pic
 
 go 1.18
 
-require github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
+require (
+	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
+	golang.org/x/exp v0.0.0-20240707233637-46b078467d37 // indirect
+)

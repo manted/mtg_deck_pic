@@ -7,7 +7,7 @@
 4 Ponder
 4 Daze
 4 Force of Will
-4 Lightning Bolt
+4 Lightning Bolt CH
 3 Mishra's Bauble
 2 Stifle
 4 Volcanic Island

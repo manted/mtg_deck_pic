@@ -21,8 +21,8 @@ const (
 	NumOfSideboardCards         = 15
 	Col60                       = 12
 	Col80                       = 16
-	ImgWidth                    = 200
-	ImgHeight                   = 280
+	ImgWidth                    = 160
+	ImgHeight                   = 224
 	SideboardGap                = 20
 	NumOfSizeboardFirstRowCards = 7
 )
