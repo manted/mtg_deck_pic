@@ -67,9 +67,9 @@ For example:
 The `DECKNAME` should be one of the text file names in the `/decklist` folder, without the `txt` extension. The generated image would be `/decklist/DECKNAME.jpg`.
 
 ### Card Names
-The card names in the decklists must match exactly the image names in the `/img` folder, without the `png` extension.
+The card names in the decklists must match exactly the image names in the `/img` folder, without the file extension.
 
-The individual card images must be in `png` format.
+The individual card image can be in `png`, `jpg` or `jpeg` format.
 
 ### Deck Picture Background
 The background of the generated image is `/img/background.jpg`. You can replace it with any image of your choice and regenerate the deck pictures.

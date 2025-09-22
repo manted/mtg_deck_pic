@@ -155,8 +155,8 @@ func main1() {
 		draw.Draw(rgba, bound, cardImg, image.Point{0, 0}, draw.Src)
 	}
 	// create final image
-	outputFileName := fmt.Sprintf("./decklist/signed_cards.jpg")
-	out, err := os.Create(fmt.Sprintf(outputFileName))
+	outputFileName := "./decklist/signed_cards.jpg"
+	out, err := os.Create(outputFileName)
 	if err != nil {
 		fmt.Println(err)
 	}

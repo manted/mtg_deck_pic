@@ -62,12 +62,13 @@ func readDecklist(deckName string) (*Deck, error) {
 		}
 		_, ok := deck.CardImgMap[cardName]
 		if !ok {
-			imgFile, err := os.Open(fmt.Sprintf("img/%s.png", cardName))
+			imgFile, extension, err := openImage(cardName)
 			if err != nil {
 				fmt.Println(err)
 				continue
 			}
-			img, err := png.Decode(imgFile)
+			defer imgFile.Close()
+			img, err := decodeImage(imgFile, extension)
 			if err != nil {
 				fmt.Println(err)
 				continue
@@ -85,6 +86,37 @@ func readDecklist(deckName string) (*Deck, error) {
 	deck.Maindeck = decklist[:totalCards-NumOfSideboardCards]
 	deck.Sideboard = decklist[totalCards-NumOfSideboardCards:]
 	return deck, nil
+}
+
+func openImage(cardName string) (*os.File, string, error) {
+	// Try .png
+	pngName := "img/" + cardName + ".png"
+	if f, err := os.Open(pngName); err == nil {
+		return f, "png", nil
+	}
+	// Try .jpg
+	jpgName := "img/" + cardName + ".jpg"
+	if f, err := os.Open(jpgName); err == nil {
+		return f, "jpg", nil
+	}
+	// Try .jpeg
+	jpegName := "img/" + cardName + ".jpeg"
+	if f, err := os.Open(jpegName); err == nil {
+		return f, "jpeg", nil
+	}
+	// Not found
+	return nil, "", fmt.Errorf("no image found for card name %q with .png, .jpg, or .jpeg extension", cardName)
+}
+
+func decodeImage(file *os.File, ext string) (image.Image, error) {
+	switch ext {
+	case "png":
+		return png.Decode(file)
+	case "jpg", "jpeg":
+		return jpeg.Decode(file)
+	default:
+		return nil, fmt.Errorf("unsupported image extension: %s", ext)
+	}
 }
 
 func main() {
@@ -157,7 +189,7 @@ func main() {
 	}
 	// create final image
 	outputFileName := fmt.Sprintf("./decklist/%s.jpg", deckName)
-	out, err := os.Create(fmt.Sprintf(outputFileName))
+	out, err := os.Create(outputFileName)
 	if err != nil {
 		fmt.Println(err)
 	}

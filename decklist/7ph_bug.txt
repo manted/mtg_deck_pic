@@ -46,7 +46,7 @@
 1 Spell Pierce
 1 Street Wraith
 1 Swamp
-1 Tamiyo, Inquisitive Student // Tamiyo, Seasoned Scholar
+1 Tamiyo, Inquisitive Student
 1 Thoughtseize
 1 Troll of Khazad-dûm
 1 Tropical Island
