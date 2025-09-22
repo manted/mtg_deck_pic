@@ -79,3 +79,11 @@ The background of the generated image is `/img/background.jpg`. You can replace 
 - Split card names with `/` in them are not working at the moment. eg: Fire // Ice. You can use a different name without the `/` in the decklists and image names in `/img` folder. eg: Fire Ice.
 - Cards that are in the decklists but are not in the `/img` folder will be left blank in the generated deck picture.
 - Same card image is used for each card name in the decklist, if you want to have different versions of a card, you can give them different names. For example, you have Island_1.png and Island_2.png, and use them as different cards in your decklist.
+
+## Compile executables
+```
+// mac
+go build -o deck_pic_generator main.go
+// windows
+GOOS=windows GOARCH=amd64 go build -o deck_pic_generator.exe
+```
