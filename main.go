@@ -2,11 +2,11 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"image"
 	"image/draw"
 	"image/jpeg"
-	"image/png"
 	"os"
 	"strconv"
 	"strings"
@@ -25,6 +25,7 @@ const (
 	ImgHeight                   = 224
 	SideboardGap                = 20
 	NumOfSizeboardFirstRowCards = 7
+	ImgDir                      = "img"
 )
 
 type Deck struct {
@@ -33,7 +34,7 @@ type Deck struct {
 	CardImgMap map[string]image.Image
 }
 
-func readDecklist(deckName string) (*Deck, error) {
+func readDecklist(deckName string, withDownload bool) (*Deck, error) {
 	file, err := os.Open(fmt.Sprintf("decklist/%s.txt", deckName))
 	if err != nil {
 		return nil, err
@@ -62,13 +63,7 @@ func readDecklist(deckName string) (*Deck, error) {
 		}
 		_, ok := deck.CardImgMap[cardName]
 		if !ok {
-			imgFile, extension, err := openImage(cardName)
-			if err != nil {
-				fmt.Println(err)
-				continue
-			}
-			defer imgFile.Close()
-			img, err := decodeImage(imgFile, extension)
+			img, err := getImage(cardName, withDownload)
 			if err != nil {
 				fmt.Println(err)
 				continue
@@ -88,45 +83,13 @@ func readDecklist(deckName string) (*Deck, error) {
 	return deck, nil
 }
 
-func openImage(cardName string) (*os.File, string, error) {
-	// Try .png
-	pngName := "img/" + cardName + ".png"
-	if f, err := os.Open(pngName); err == nil {
-		return f, "png", nil
-	}
-	// Try .jpg
-	jpgName := "img/" + cardName + ".jpg"
-	if f, err := os.Open(jpgName); err == nil {
-		return f, "jpg", nil
-	}
-	// Try .jpeg
-	jpegName := "img/" + cardName + ".jpeg"
-	if f, err := os.Open(jpegName); err == nil {
-		return f, "jpeg", nil
-	}
-	// Not found
-	return nil, "", fmt.Errorf("no image found for card name %q with .png, .jpg, or .jpeg extension", cardName)
-}
-
-func decodeImage(file *os.File, ext string) (image.Image, error) {
-	switch ext {
-	case "png":
-		return png.Decode(file)
-	case "jpg", "jpeg":
-		return jpeg.Decode(file)
-	default:
-		return nil, fmt.Errorf("unsupported image extension: %s", ext)
-	}
-}
-
 func main() {
-	args := os.Args
-	deckName := DefaultDeckName
-	if len(args) > 1 {
-		deckName = args[1]
-	}
-	fmt.Printf("Generating deck pic for %s\n", deckName)
-	deck, err := readDecklist(deckName)
+	deckName := flag.String("deck", DefaultDeckName, "decklist file name")
+	withDownload := flag.Bool("d", false, "download missing images from Scryfall")
+	flag.Parse()
+	fmt.Printf("Generating deck pic for %s\n", *deckName)
+	fmt.Println("Download from Scryfall?:", *withDownload)
+	deck, err := readDecklist(*deckName, *withDownload)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -142,7 +105,7 @@ func main() {
 	r := image.Rectangle{image.Point{0, 0}, bottomRightPoint}
 	rgba := image.NewRGBA(r)
 	// render background
-	bgImgFile, err := os.Open("img/background.jpg")
+	bgImgFile, err := os.Open(ImgDir + "/" + "background.jpg")
 	if err != nil {
 		fmt.Println(err)
 	} else {
@@ -188,7 +151,7 @@ func main() {
 		}
 	}
 	// create final image
-	outputFileName := fmt.Sprintf("./decklist/%s.jpg", deckName)
+	outputFileName := fmt.Sprintf("./decklist/%s.jpg", *deckName)
 	out, err := os.Create(outputFileName)
 	if err != nil {
 		fmt.Println(err)

@@ -32,12 +32,19 @@ cd C:\Users\manted\mtg_deck_pic-main
 To run the program:
 
 ```sh
-start deck_pic_generator DECKNAME
+start deck_pic_generator -deck DECKNAME
 ```
 
 For example:
 ```sh
-start deck_pic_generator grixis_delver
+start deck_pic_generator -deck grixis_delver
+```
+
+Optionally you can provide `-d` option and it will download missing card images from Scryfall and save them in `img/`.
+
+For example:
+```sh
+start deck_pic_generator -deck grixis_delver -d
 ```
 
 #### On Mac
@@ -56,12 +63,19 @@ cd /Users/manted/mtg_deck_pic-main
 To run the program in the terminal:
 
 ```sh
-./deck_pic_generator DECKNAME
+./deck_pic_generator -deck DECKNAME
 ```
 
 For example:
 ```sh
-./deck_pic_generator grixis_delver
+./deck_pic_generator -deck grixis_delver
+```
+
+Optionally you can provide `-d` option and it will download missing card images from Scryfall and save them in `img/`.
+
+For example:
+```sh
+./deck_pic_generator -deck grixis_delver -d
 ```
 
 The `DECKNAME` should be one of the text file names in the `/decklist` folder, without the `txt` extension. The generated image would be `/decklist/DECKNAME.jpg`.
