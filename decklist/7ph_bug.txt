@@ -1,0 +1,76 @@
+1 Abrupt Decay
+1 Animate Dead
+1 Assassin's Trophy
+1 Baleful Strix
+1 Barrowgoyf
+1 Bayou
+1 Bitter Triumph
+1 Bloodstained Mire
+1 Boseiju, Who Endures
+1 Brainstorm
+1 Breeding Pool
+1 Counterspell
+1 Dauthi Voidwalker
+1 Deathrite Shaman
+1 Duress
+1 Emperor of Bones
+1 Endurance
+1 Entomb
+1 Fatal Push
+1 Flooded Strand
+1 Forest
+1 Generous Ent
+1 Gitaxian Probe
+1 Grist, the Hunger Tide
+1 Hedge Maze
+1 Inquisition of Kozilek
+1 Island
+1 Leovold, Emissary of Trest
+1 Malevolent Rumble
+1 Mana Leak
+1 Mental Misstep
+1 Metamorphosis Fanatic
+1 Misty Rainforest
+1 Oko, Thief of Crowns
+1 Overgrown Tomb
+1 Overlord of the Balemurk
+1 Polluted Delta
+1 Ponder
+1 Preordain
+1 Psychic Frog
+1 Rakshasa's Bargain
+1 Reanimate
+1 Scalding Tarn
+1 Sheoldred, the Apocalypse
+1 Six
+1 Spell Pierce
+1 Street Wraith
+1 Swamp
+1 Tamiyo, Inquisitive Student
+1 Thoughtseize
+1 Troll of Khazad-dûm
+1 Tropical Island
+1 Undercity Sewers
+1 Underground Mortuary
+1 Underground Sea
+1 Uro, Titan of Nature's Wrath
+1 Verdant Catacombs
+1 Watery Grave
+1 Windswept Heath
+1 Worldly Tutor
+// sidebaord
+1 Blue Elemental Blast
+1 Carpet of Flowers
+1 Collector Ouphe
+1 Consign to Memory
+1 Damnation
+1 Engineered Explosives
+1 Feed the Swarm
+1 Force of Negation
+1 Force of Vigor
+1 Keen-Eyed Curator
+1 Nature's Claim
+1 Pernicious Deed
+1 Sheoldred's Edict
+1 Toxic Deluge
+1 Weathered Runestone

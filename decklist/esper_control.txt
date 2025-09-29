@@ -1,0 +1,41 @@
+4 Orcish Bowmasters
+2 Baleful Strix
+2 Snapcaster Mage
+1 Barrowgoyf
+2 Thoughtseize
+1 Cling to Dust
+4 Ponder
+4 Brainstorm
+4 Force of Will
+2 Spell Pierce
+2 Stock Up
+2 Teferi, Time Raveler
+1 Narset, Parter of Veils
+1 Kaito, Bane of Nightmares
+1 Jace, the Mind Sculptor
+3 Prismatic Ending
+4 Swords to Plowshares
+1 Lorien Revealed
+2 Island
+2 Plains
+1 Swamp
+1 Karakas
+1 Undercity Sewers
+1 Underground Sea
+1 Tundra
+1 Scrubland
+4 Flooded Strand
+3 Polluted Delta
+2 Marsh Flats
+// sidebaord
+2 Force of Negation
+3 Consign to Memory
+1 Hydroblast
+1 Blue Elemental Blast
+1 Flusterstorm
+1 Thoughtseize
+1 Surgical Extraction
+1 Ghost Vacuum
+1 Nihil Spellbomb
+1 Lavinia, Azorius Renegade
+2 Harbinger of the Seas

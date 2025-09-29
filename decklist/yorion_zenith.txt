@@ -1,0 +1,43 @@
+1 Birds of Paradise
+4 Ice-Fang Coatl
+1 Snapcaster Mage
+1 Collector Ouphe
+1 Ramunap Excavator
+4 Endurance
+4 Uro, Titan of Nature's Wrath
+1 Leovold, Emissary of Trest
+1 Grist, the Hunger Tide
+4 Green Sun's Zenith
+4 Abundant Growth
+4 Ponder
+4 Brainstorm
+4 Force of Will
+2 Force of Negation
+4 Swords to Plowshares
+4 Prismatic Ending
+1 Life from the Loam
+1 Sylvan Library
+1 Dryad Arbor
+1 Forest
+1 Snow-Covered Forest
+2 Snow-Covered Island
+1 Snow-Covered Plains
+3 Tropical Island
+1 Tundra
+1 Savannah
+1 Bayou
+1 Karakas
+4 Wasteland
+4 Prismatic Vista
+4 Misty Rainforest
+4 Windswept Heath
+1 Flooded Strand
+// sideboard
+3 Carpet of Flowers
+2 Force of Negation
+2 Flusterstorm
+1 Spell Pierce
+1 Collector Ouphe
+3 Plague Engineer
+2 Surgical Extraction
+1 Yorion, Sky Nomad

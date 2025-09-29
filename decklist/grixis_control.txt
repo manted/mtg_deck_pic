@@ -1,0 +1,41 @@
+4 Orcish Bowmasters
+3 Baleful Strix
+1 Snapcaster Mage
+1 Brazen Borrower
+1 Dauthi Voidwalker
+1 Barrowgoyf
+1 Murktide Regent
+1 Narset, Parter of Veils
+1 Kaito, Bane of Nightmares
+1 Jace, the Mind Sculptor
+4 Lightning Bolt CH
+2 Sheoldred's Edict
+2 Kolaghan's Command
+1 Spell Pierce
+2 Cling to Dust
+2 Thoughtseize
+4 Brainstorm
+4 Ponder
+4 Force of Will
+1 Lorien Revealed
+1 Underground Sea
+1 Undercity Sewers
+1 Volcanic Island
+2 Badlands
+2 Island
+2 Swamp
+1 Mountain
+4 Polluted Delta
+3 Bloodstained Mire
+2 Scalding Tarn
+// sideboard
+2 Pyroblast
+1 Red Elemental Blast
+3 Consign to Memory
+1 Opposition Agent
+1 Thoughtseize
+1 Fatal Push
+1 Meltdown
+2 Price of Progress
+2 Surgical Extraction
+1 Nihil Spellbomb
